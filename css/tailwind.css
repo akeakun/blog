@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+h1, h2, h3 {
+  scroll-margin-top: 85px;
+}
+
 .task-list-item::before {
   @apply hidden;
 }
