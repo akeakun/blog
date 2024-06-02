@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { slug } from 'github-slugger'
+import { Badge } from '@/components/shadcn/ui/badge'
 interface Props {
   text: string
 }
@@ -8,9 +9,11 @@ const Tag = ({ text }: Props) => {
   return (
     <Link
       href={`/tags/${slug(text)}`}
-      className="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+      className="mr-3 text-sm font-medium uppercase text-gray-800 py-2"
     >
-      {text.split(' ').join('-')}
+      <Badge className="bg-primary-500 hover:bg-primary-600 dark:hover:bg-primary-400">
+        {text.split(' ').join('-')}
+      </Badge>
     </Link>
   )
 }
